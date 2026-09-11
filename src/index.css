@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-orange: #ff4d0a;
+  --color-brand-orange-bright: #ff5a00;
+  --color-brand-dark: #0d0908;
+  --color-brand-dark-card: #171210;
+  --color-brand-dark-border: #33251f;
+  --color-brand-text: #111111;
+  --color-brand-text-secondary: #555555;
+  --color-brand-text-muted: #777777;
+  --color-brand-cream: #f8f7f4;
+  --color-brand-white: #ffffff;
+  --color-brand-soft-orange: #fff0e8;
+  --color-brand-orange-glow: #ffb08a;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-button: 10px;
+  --radius-card: 16px;
+
+  --animate-partners-marquee: partners-marquee 35s linear infinite;
+}
+
+@keyframes partners-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-brand-cream text-brand-text font-sans antialiased;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-brand-orange) 20%, transparent);
+    color: var(--color-brand-text);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
