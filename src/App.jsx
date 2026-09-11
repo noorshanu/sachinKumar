@@ -8,6 +8,8 @@ import MentorshipPage from './pages/Mentorship';
 import Book from './pages/Book';
 import Club from './pages/Club';
 import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -39,6 +41,8 @@ function App() {
           <Route path="/book" element={<Book />} />
           <Route path="/club" element={<Club />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
       </main>
       <Footer />
