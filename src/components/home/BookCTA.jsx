@@ -6,9 +6,9 @@ import { bookImage } from '../../lib/images';
 import { fadeUp, staggerContainer, floatAnimation } from '../../lib/constants';
 
 const bookPoints = [
-  'Understand meme tokens',
-  'Learn from real case studies',
-  'Explore the future of Web3',
+  'Spot promising meme tokens',
+  'Avoid scams & hype traps',
+  'AI trading in the meme economy',
 ];
 
 export default function BookCTA({ id = 'book' }) {

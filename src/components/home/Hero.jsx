@@ -52,23 +52,8 @@ export default function Hero() {
         </div>
       )}
 
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 right-3 z-30 hidden -translate-y-1/2 flex-col items-center gap-4 xl:flex 2xl:right-5"
-      >
-        {verticalWords.map((word) => (
-          <span
-            key={word}
-            className="text-[9px] font-bold tracking-[0.28em] text-brand-text-muted/40 uppercase"
-            style={{ writingMode: 'vertical-rl' }}
-          >
-            {word}
-          </span>
-        ))}
-      </div>
-
       {/* ===================== DESKTOP ===================== */}
-      {/* Navbar ~72px + 12px gap → person starts ~84px from top */}
+      {/* Navbar ~80px + 12px gap → person starts ~92px from top */}
       <div className="relative z-10 hidden min-h-[100svh] lg:block lg:min-h-[680px] lg:max-h-[920px]">
         {/* Person — tall, head close to navbar */}
         <div className="pointer-events-none absolute inset-x-0 top-[84px] bottom-0 z-[5] flex justify-center">
@@ -84,14 +69,14 @@ export default function Hero() {
           )}
         </div>
 
-        {/* Quote — right of person head (~12–20px below navbar band) */}
+        {/* Quote — beside head, left of book */}
         <motion.blockquote
           initial={{ opacity: 0, x: 12 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.55, delay: 0.3 }}
-          className="absolute top-[96px] left-[54%] z-20 max-w-[190px] text-left xl:top-[100px] xl:left-[55%] xl:max-w-[210px]"
+          className="absolute top-[20%] left-[58%] z-20 max-w-[200px] text-left"
         >
-          <p className="font-serif text-[13px] leading-[1.4] text-brand-text-secondary italic xl:text-[14px]">
+          <p className="font-serif text-[16px] leading-[1.35] text-brand-text-secondary italic xl:text-[18px]">
             <span className="mr-0.5 align-top text-[22px] leading-none font-normal text-brand-orange not-italic">
               &ldquo;
             </span>
@@ -102,7 +87,7 @@ export default function Hero() {
           </cite>
         </motion.blockquote>
 
-        <Container className="relative z-20 min-h-[100svh] pt-[84px] pb-6 xl:min-h-[680px] xl:pb-8">
+        <Container className="relative z-20 min-h-[100svh] pt-[92px] pb-6 xl:min-h-[680px] xl:pb-8">
           <div className="grid grid-cols-12 items-start gap-3">
             {/* LEFT — copy + stats tight together */}
             <motion.div
@@ -166,24 +151,39 @@ export default function Hero() {
               </motion.div>
             </motion.div>
 
-            <div className="col-span-3" aria-hidden="true" />
+            <div className="col-span-2" aria-hidden="true" />
 
-            {/* RIGHT — book */}
+            {/* RIGHT — book + keyword stack */}
             <motion.div
               variants={staggerContainer}
               initial="hidden"
               animate="visible"
-              className="col-span-4 flex flex-col items-end pt-24 xl:pr-6 xl:pt-28"
+              className="col-span-5 flex items-start justify-end gap-4 pt-16 xl:gap-5 xl:pr-2 xl:pt-20"
             >
               {bookImage && (
                 <motion.img
                   variants={fadeUp}
                   src={bookImage}
                   alt="Memes to Millions book"
-                  className="h-[260px] w-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.12)] xl:h-[300px] 2xl:h-[330px]"
+                  className="h-[350px] w-auto shrink-0 object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.12)]"
                   animate={floatAnimation}
                 />
               )}
+
+              <motion.div
+                variants={fadeUp}
+                aria-hidden="true"
+                className="flex h-[360px] flex-col justify-center gap-2 py-1"
+              >
+                {verticalWords.map((word) => (
+                  <span
+                    key={word}
+                    className="text-left text-[10px] font-bold tracking-[0.22em] text-black font-bold uppercase xl:text-[14px]"
+                  >
+                    {word}
+                  </span>
+                ))}
+              </motion.div>
             </motion.div>
           </div>
         </Container>
@@ -192,31 +192,31 @@ export default function Hero() {
       {/* ===================== MOBILE / TABLET ===================== */}
       <div className="relative z-10 lg:hidden">
         <Container className="pt-20 pb-10">
-          {/* 1. Combined mobile visual (person + book + quote) */}
+          {/* 1. Combined mobile visual (person + book + quote) + overlapping signature */}
           {mobileHeroImage && (
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mb-4"
+              className="relative mb-8"
             >
               <img
                 src={mobileHeroImage}
                 alt="Sachin Kumar with Memes to Millions"
                 className="mx-auto w-full max-w-[520px] object-contain"
               />
+
+              {/* Signature — absolute, rotated, slightly overlapping book */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.35, duration: 0.45 }}
+                className="pointer-events-none absolute -bottom-1 right-[4%] z-10 origin-center rotate-[-18deg] sm:right-[8%]"
+              >
+                <SignatureBlock className="!w-[128px] sm:!w-[148px]" />
+              </motion.div>
             </motion.div>
           )}
-
-          {/* Signature — directly under mobile visual */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.25 }}
-            className="mb-7 flex justify-center"
-          >
-            <SignatureBlock centered />
-          </motion.div>
 
           {/* 2. Content */}
           <motion.div

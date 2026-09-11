@@ -3,6 +3,7 @@ import { FiExternalLink } from 'react-icons/fi';
 import Container from './Container';
 import { footerLinks, socialLinks } from '../../data/navigation';
 import { SITE } from '../../lib/constants';
+import { logoImage } from '../../lib/images';
 
 export default function Footer() {
   return (
@@ -10,11 +11,16 @@ export default function Footer() {
       <Container className="py-16 md:py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <Link
-              to="/"
-              className="text-sm font-bold tracking-[0.18em] text-white transition-colors hover:text-brand-orange"
-            >
-              SACHIN KUMAR
+            <Link to="/" className="inline-flex items-center" aria-label="Sachin Kumar home">
+              {logoImage ? (
+                <img
+                  src={logoImage}
+                  alt="Sachin Kumar"
+                  className="h-12 w-auto object-contain brightness-0 invert md:h-14"
+                />
+              ) : (
+                <span className="text-sm font-bold tracking-[0.18em] text-white">SACHIN KUMAR</span>
+              )}
             </Link>
             <p className="mt-3 text-sm font-medium tracking-[0.15em] text-white/50 uppercase">
               {SITE.tagline}

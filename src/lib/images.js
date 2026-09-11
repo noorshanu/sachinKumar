@@ -15,3 +15,4 @@ export const bookImage = getImage('book');
 export const signatureImage = getImage('sign');
 export const heroBackgroundImage = getImage('backgroundhero');
 export const mobileHeroImage = getImage('mobileview');
+export const logoImage = getImage('logo');

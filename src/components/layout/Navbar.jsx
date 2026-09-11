@@ -7,6 +7,25 @@ import Button from '../common/Button';
 import { navLinks } from '../../data/navigation';
 import NavLink from '../common/NavLink';
 import { useIsActive } from '../../hooks/useIsActive';
+import { logoImage } from '../../lib/images';
+
+function BrandLogo({ className = '' }) {
+  if (logoImage) {
+    return (
+      <img
+        src={logoImage}
+        alt="Sachin Kumar"
+        className={`h-12 w-auto object-contain md:h-14 ${className}`}
+      />
+    );
+  }
+
+  return (
+    <span className="text-sm font-bold tracking-[0.18em] text-brand-text md:text-base">
+      SACHIN KUMAR
+    </span>
+  );
+}
 
 function NavItem({ link, onNavigate }) {
   const active = useIsActive(link.href);
@@ -72,17 +91,14 @@ export default function Navbar() {
     >
       <Container>
         <nav
-          className="flex h-16 items-center justify-between md:h-[72px]"
+          className="flex h-[72px] items-center justify-between py-2 md:h-20 md:py-3"
           aria-label="Main navigation"
         >
-          <Link
-            to="/"
-            className="text-sm font-bold tracking-[0.18em] text-brand-text transition-colors hover:text-brand-orange md:text-base"
-          >
-            SACHIN KUMAR
+          <Link to="/" className="inline-flex shrink-0 items-center" aria-label="Sachin Kumar home">
+            <BrandLogo />
           </Link>
 
-          <ul className="hidden items-center gap-6 lg:flex xl:gap-8">
+          <ul className="hidden items-center gap-5 xl:flex xl:gap-7">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <NavItem link={link} />
@@ -90,7 +106,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <Button href="/#club" icon={FiArrowRight}>
               Join Now
             </Button>
@@ -98,7 +114,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-brand-text/10 text-brand-text lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-brand-text/10 text-brand-text xl:hidden"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
             aria-expanded={mobileOpen}
@@ -115,7 +131,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-40 bg-brand-dark/40 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-40 bg-brand-dark/40 backdrop-blur-sm xl:hidden"
               onClick={closeMobile}
               aria-hidden="true"
             />
@@ -124,10 +140,10 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="fixed inset-y-0 right-0 z-50 flex w-full max-w-sm flex-col bg-white shadow-2xl lg:hidden"
+              className="fixed inset-y-0 right-0 z-50 flex w-full max-w-sm flex-col bg-white shadow-2xl xl:hidden"
             >
               <div className="flex items-center justify-between border-b border-brand-text/5 px-6 py-4">
-                <span className="text-sm font-bold tracking-[0.18em]">SACHIN KUMAR</span>
+                <BrandLogo className="!h-11" />
                 <button
                   type="button"
                   onClick={closeMobile}

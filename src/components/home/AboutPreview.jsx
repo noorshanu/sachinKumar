@@ -8,13 +8,22 @@ import { aboutFocus, aboutPreviewCopy, aboutRoles } from '../../data/about';
 
 export default function AboutPreview() {
   return (
-    <section id="about" className="relative overflow-hidden bg-white py-14 md:py-20 lg:py-24">
+    <section id="about" className="relative overflow-hidden bg-[#0D0908] py-14 md:py-20 lg:py-24">
+      {/* Soft brand glow — matches dark section rhythm */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-brand-orange/30 to-transparent"
+        className="pointer-events-none absolute -top-24 right-0 h-[420px] w-[420px] rounded-full bg-brand-orange/10 blur-[100px]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 left-0 h-[280px] w-[280px] rounded-full bg-brand-orange/5 blur-[80px]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-brand-orange/35 to-transparent"
       />
 
-      <Container>
+      <Container className="relative z-10">
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Portrait */}
           <motion.div
@@ -27,7 +36,7 @@ export default function AboutPreview() {
             <div className="relative mx-auto max-w-[420px] lg:mx-0">
               <div
                 aria-hidden="true"
-                className="absolute -inset-3 rounded-[28px] bg-gradient-to-br from-brand-soft-orange via-transparent to-brand-orange/10"
+                className="absolute -inset-3 rounded-[28px] bg-gradient-to-br from-brand-orange/25 via-transparent to-brand-orange/5"
               />
               {personImage && (
                 <img
@@ -37,11 +46,11 @@ export default function AboutPreview() {
                   loading="lazy"
                 />
               )}
-              <div className="absolute -bottom-3 left-4 z-20 rounded-[12px] border border-brand-text/8 bg-white/95 px-4 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.06)] backdrop-blur-sm">
+              <div className="absolute -bottom-3 left-4 z-20 rounded-[12px] border border-white/10 bg-[#161210]/95 px-4 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.35)] backdrop-blur-sm">
                 <p className="text-[10px] font-bold tracking-[0.18em] text-brand-orange uppercase">
                   Author
                 </p>
-                <p className="mt-0.5 text-sm font-bold text-brand-text">Memes to Millions</p>
+                <p className="mt-0.5 text-sm font-bold text-white">Memes to Millions</p>
               </div>
             </div>
           </motion.div>
@@ -63,7 +72,7 @@ export default function AboutPreview() {
 
             <motion.h2
               variants={fadeUp}
-              className="max-w-xl text-[36px] font-extrabold leading-[1.05] tracking-[-0.03em] text-brand-text md:text-[44px] lg:text-[52px]"
+              className="max-w-xl text-[36px] font-extrabold leading-[1.05] tracking-[-0.03em] text-white md:text-[44px] lg:text-[52px]"
             >
               {aboutPreviewCopy.title}{' '}
               <span className="text-brand-orange">{aboutPreviewCopy.highlight}</span>
@@ -73,7 +82,7 @@ export default function AboutPreview() {
               {aboutRoles.map((role) => (
                 <span
                   key={role}
-                  className="rounded-[8px] border border-brand-text/8 bg-brand-cream px-3 py-1.5 text-[12px] font-semibold text-brand-text-secondary"
+                  className="rounded-[8px] border border-white/10 bg-white/5 px-3 py-1.5 text-[12px] font-semibold text-white/75"
                 >
                   {role}
                 </span>
@@ -82,25 +91,25 @@ export default function AboutPreview() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-6 max-w-2xl text-[15px] leading-relaxed text-brand-text-secondary md:text-base"
+              className="mt-6 max-w-2xl text-[15px] leading-relaxed text-white/65 md:text-base"
             >
               {aboutPreviewCopy.lead}
             </motion.p>
             <motion.p
               variants={fadeUp}
-              className="mt-4 max-w-2xl text-[15px] leading-relaxed text-brand-text-secondary md:text-base"
+              className="mt-4 max-w-2xl text-[15px] leading-relaxed text-white/65 md:text-base"
             >
               {aboutPreviewCopy.body}
             </motion.p>
 
             <motion.div
               variants={fadeUp}
-              className="mt-7 flex flex-wrap gap-x-4 gap-y-2 border-t border-brand-text/8 pt-6"
+              className="mt-7 flex flex-wrap gap-x-4 gap-y-2 border-t border-white/10 pt-6"
             >
               {aboutFocus.map((item) => (
                 <span
                   key={item}
-                  className="text-[12px] font-bold tracking-[0.08em] text-brand-text-muted uppercase"
+                  className="text-[12px] font-bold tracking-[0.08em] text-white/40 uppercase"
                 >
                   {item}
                 </span>
