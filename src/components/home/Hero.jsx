@@ -198,7 +198,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mb-7"
+              className="mb-4"
             >
               <img
                 src={mobileHeroImage}
@@ -207,6 +207,16 @@ export default function Hero() {
               />
             </motion.div>
           )}
+
+          {/* Signature — directly under mobile visual */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.25 }}
+            className="mb-7 flex justify-center"
+          >
+            <SignatureBlock centered />
+          </motion.div>
 
           {/* 2. Content */}
           <motion.div
@@ -260,10 +270,6 @@ export default function Hero() {
 
             <motion.div variants={fadeUp} className="mt-7">
               <HeroStats stats={heroStats} />
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="mt-6 flex justify-center sm:justify-start">
-              <SignatureBlock centered />
             </motion.div>
           </motion.div>
         </Container>
