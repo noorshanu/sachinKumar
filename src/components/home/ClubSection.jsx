@@ -15,6 +15,12 @@ export default function ClubSection() {
           alt=""
           className="h-full w-full object-cover object-center opacity-80"
         />
+        <img
+          src="/100xbull.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute top-1/2 right-[-8%] h-[min(78vw,540px)] w-auto max-w-[min(92vw,680px)] -translate-y-1/2 object-contain opacity-[0.16] mix-blend-lighten sm:right-[-4%] md:opacity-[0.2] lg:right-0"
+        />
       </div>
 
       <Container className="relative z-10">

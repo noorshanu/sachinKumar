@@ -6,16 +6,23 @@ import TelegramCta from '../components/common/TelegramCta';
 import CandlestickBackground from '../components/ui/CandlestickBackground';
 import Glow from '../components/ui/Glow';
 import { clubFeatures } from '../data/clubFeatures';
-import { fadeUp } from '../lib/constants';
+import { fadeUp, SITE } from '../lib/constants';
 
 export default function Club() {
   return (
     <div className="pt-24 md:pt-28">
       <section className="relative overflow-hidden bg-brand-dark py-16 md:py-24">
-        <CandlestickBackground className="right-0 top-0 h-full w-1/2 opacity-50" />
-        <Glow className="left-1/3 top-1/2 h-[500px] w-[500px] -translate-y-1/2 opacity-15" />
+        <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+          <img
+            src="/100xbull.png"
+            alt=""
+            className="absolute right-[-6%] top-1/2 h-[min(70vw,480px)] w-[min(88vw,600px)] max-h-[90%] -translate-y-1/2 object-contain object-right opacity-[0.12] mix-blend-lighten md:right-[-2%] md:opacity-[0.16]"
+          />
+        </div>
+        <CandlestickBackground className="right-0 top-0 z-[1] h-full w-1/2 opacity-50" />
+        <Glow className="left-1/3 top-1/2 z-[1] h-[500px] w-[500px] -translate-y-1/2 opacity-15" />
 
-        <Container className="relative">
+        <Container className="relative z-10">
           <motion.div variants={fadeUp} initial="hidden" animate="visible">
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-orange">
               {SITE.clubLabel}
@@ -37,8 +44,15 @@ export default function Club() {
         </Container>
       </section>
 
-      <section className="bg-brand-dark pb-16 md:pb-24">
-        <Container>
+      <section className="relative overflow-hidden bg-brand-dark pb-16 md:pb-24">
+        <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+          <img
+            src="/100xbull.png"
+            alt=""
+            className="absolute left-1/2 top-1/2 h-[min(65vw,420px)] w-[min(85vw,520px)] -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.08] mix-blend-lighten"
+          />
+        </div>
+        <Container className="relative z-10">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {clubFeatures.map((feature, i) => (
               <ClubCard key={feature.id} feature={feature} index={i} />

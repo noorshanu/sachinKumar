@@ -3,7 +3,7 @@ import { SITE } from '../lib/constants';
 export const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
-  { label: 'Club', href: '/#club' },
+  { label: SITE.clubName, href: '/#club' },
   { label: 'Mentorship', href: '/#mentorship' },
   { label: 'Book', href: '/book' },
   { label: 'Partners', href: '/#partners' },
