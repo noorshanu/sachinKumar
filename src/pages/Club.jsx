@@ -12,47 +12,62 @@ export default function Club() {
   return (
     <div className="pt-24 md:pt-28">
       <section className="relative overflow-hidden bg-brand-dark py-16 md:py-24">
-        <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-          <img
-            src="/100xbull.png"
-            alt=""
-            className="absolute right-[-6%] top-1/2 h-[min(70vw,480px)] w-[min(88vw,600px)] max-h-[90%] -translate-y-1/2 object-contain object-right opacity-[0.12] mix-blend-lighten md:right-[-2%] md:opacity-[0.16]"
-          />
-        </div>
         <CandlestickBackground className="right-0 top-0 z-[1] h-full w-1/2 opacity-50" />
         <Glow className="left-1/3 top-1/2 z-[1] h-[500px] w-[500px] -translate-y-1/2 opacity-15" />
 
         <Container className="relative z-10">
-          <motion.div variants={fadeUp} initial="hidden" animate="visible">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-orange">
-              {SITE.clubLabel}
-            </p>
-            <h1 className="mt-4 max-w-3xl text-[42px] font-extrabold leading-[1.05] tracking-[-0.03em] text-white md:text-[56px]">
-              Everything You Need to{' '}
-              <span className="text-brand-orange">Trade & Grow</span>
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/60">
-              A premium trading community with real-time signals, live education, and upcoming
-              algo strategies   built for traders who take the game seriously.
-            </p>
-            <div className="mt-8">
-              <TelegramCta iconPosition="right">
-                Join Now
-              </TelegramCta>
-            </div>
-          </motion.div>
+          <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="lg:col-span-5"
+            >
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-orange">
+                {SITE.clubLabel}
+              </p>
+              <h1 className="mt-4 max-w-3xl text-[42px] font-extrabold leading-[1.05] tracking-[-0.03em] text-white md:text-[56px]">
+                Everything You Need to{' '}
+                <span className="text-brand-orange">Trade & Grow</span>
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/60">
+                A premium trading community with real-time signals, live education, and upcoming
+                algo strategies — built for traders who take the game seriously.
+              </p>
+              <div className="mt-8">
+                <TelegramCta iconPosition="right">
+                  Join Now
+                </TelegramCta>
+              </div>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="lg:col-span-7"
+            >
+              <div
+                className="relative overflow-hidden rounded-[20px] border border-brand-orange/25 bg-[#0a0706]/85 px-4 py-8 shadow-[0_0_80px_rgba(255,77,10,0.14)] backdrop-blur-sm sm:px-8 sm:py-12 md:py-14"
+                aria-label={`${SITE.clubName} logo`}
+              >
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,77,10,0.24)_0%,transparent_70%)]"
+                />
+                <img
+                  src="/100xbull.png"
+                  alt={`${SITE.clubName} — Trade | Learn | Grow`}
+                  className="relative mx-auto w-full max-w-[min(100%,440px)] object-contain drop-shadow-[0_24px_60px_rgba(0,0,0,0.5)] md:max-w-[620px] lg:max-w-[700px]"
+                />
+              </div>
+            </motion.div>
+          </div>
         </Container>
       </section>
 
-      <section className="relative overflow-hidden bg-brand-dark pb-16 md:pb-24">
-        <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-          <img
-            src="/100xbull.png"
-            alt=""
-            className="absolute left-1/2 top-1/2 h-[min(65vw,420px)] w-[min(85vw,520px)] -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.08] mix-blend-lighten"
-          />
-        </div>
-        <Container className="relative z-10">
+      <section className="bg-brand-dark pb-16 md:pb-24">
+        <Container>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {clubFeatures.map((feature, i) => (
               <ClubCard key={feature.id} feature={feature} index={i} />
