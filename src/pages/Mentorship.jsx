@@ -3,7 +3,7 @@ import Container from '../components/layout/Container';
 import MentorshipCard from '../components/home/MentorshipCard';
 import TelegramCta from '../components/common/TelegramCta';
 import { mentorshipPrograms } from '../data/mentorship';
-import { fadeUp, SITE } from '../lib/constants';
+import { fadeUp } from '../lib/constants';
 
 export default function MentorshipPage() {
   return (
@@ -21,19 +21,10 @@ export default function MentorshipPage() {
               Choose the path that fits your goals   from structured online learning to immersive
               offline workshops and exclusive 1-to-1 guidance.
             </p>
-            <div className="mt-8 flex flex-col items-start gap-1.5">
+            <div className="mt-8">
               <TelegramCta iconPosition="right">
                 Explore Mentorship
               </TelegramCta>
-              <a
-                href={SITE.telegramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[12px] font-medium text-brand-text-muted transition-colors hover:text-brand-orange"
-                aria-label={`Open Telegram ${SITE.telegramHandle}`}
-              >
-                Telegram {SITE.telegramHandle}
-              </a>
             </div>
           </motion.div>
         </Container>
@@ -61,19 +52,10 @@ export default function MentorshipPage() {
               Reach out and we&apos;ll help you find the best fit based on your experience level
               and trading goals.
             </p>
-            <div className="mt-6 flex flex-col items-center gap-1.5">
+            <div className="mt-6">
               <TelegramCta iconPosition="right">
                 Get in Touch
               </TelegramCta>
-              <a
-                href={SITE.telegramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[12px] font-medium text-brand-text-muted transition-colors hover:text-brand-orange"
-                aria-label={`Open Telegram ${SITE.telegramHandle}`}
-              >
-                Telegram {SITE.telegramHandle}
-              </a>
             </div>
           </motion.div>
         </Container>

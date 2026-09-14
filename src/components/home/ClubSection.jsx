@@ -45,20 +45,9 @@ export default function ClubSection() {
               <br className="hidden lg:block" />
               learn from live sessions and access powerful trading tools.
             </p>
-            <div className="flex shrink-0 flex-col items-start gap-1.5">
-              <TelegramCta size="md" iconPosition="right" className="shrink-0">
-                Join Now
-              </TelegramCta>
-              <a
-                href={SITE.telegramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[12px] font-medium text-white/70 transition-colors hover:text-brand-orange"
-                aria-label={`Open Telegram ${SITE.telegramHandle}`}
-              >
-                Telegram {SITE.telegramHandle}
-              </a>
-            </div>
+            <TelegramCta size="md" iconPosition="right" className="shrink-0">
+              Join Now
+            </TelegramCta>
           </div>
         </div>
 

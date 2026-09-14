@@ -4,6 +4,7 @@ import Container from '../layout/Container';
 import Button from '../common/Button';
 import { bookImage } from '../../lib/images';
 import { fadeUp, staggerContainer, floatAnimation } from '../../lib/constants';
+import { bookMeta } from '../../data/book';
 
 const bookPoints = [
   'Spot promising meme tokens',
@@ -102,7 +103,7 @@ export default function BookCTA({ id = 'book' }) {
                 More than a book. It&apos;s a roadmap for the next generation.
               </p>
               <div className="mt-5 lg:flex lg:justify-end">
-                <Button href="/book" icon={FiArrowRight}>
+                <Button href={bookMeta.buyHref} icon={FiArrowRight}>
                   Get Your Copy
                 </Button>
               </div>
@@ -161,7 +162,7 @@ export default function BookCTA({ id = 'book' }) {
             More than a book. It&apos;s a roadmap for the next generation.
           </p>
 
-          <Button href="/book" icon={FiArrowRight}>
+          <Button href={bookMeta.buyHref} icon={FiArrowRight}>
             Get Your Copy
           </Button>
 

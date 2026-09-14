@@ -3,7 +3,7 @@ import Container from '../layout/Container';
 import TelegramCta from '../common/TelegramCta';
 import MentorshipCard from './MentorshipCard';
 import { mentorshipPrograms } from '../../data/mentorship';
-import { fadeUp, staggerContainer, SITE } from '../../lib/constants';
+import { fadeUp, staggerContainer } from '../../lib/constants';
 
 export default function Mentorship() {
   return (
@@ -63,15 +63,6 @@ export default function Mentorship() {
             <TelegramCta size="md" iconPosition="right">
               Explore Mentorship
             </TelegramCta>
-            <a
-              href={SITE.telegramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[12px] font-medium text-brand-text-muted transition-colors hover:text-brand-orange"
-              aria-label={`Open Telegram ${SITE.telegramHandle}`}
-            >
-              Telegram {SITE.telegramHandle}
-            </a>
           </motion.div>
         </motion.div>
 

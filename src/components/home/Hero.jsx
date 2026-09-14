@@ -72,7 +72,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 12 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.55, delay: 0.3 }}
-          className="absolute top-[20%] left-[58%] z-20 max-w-[200px] text-left"
+          className="absolute top-[20%] left-[56%] z-20 max-w-[200px] text-left"
         >
           <p className="font-serif text-[16px] leading-[1.35] text-brand-text-secondary italic xl:text-[18px]">
             <span className="mr-0.5 align-top text-[22px] leading-none font-normal text-brand-orange not-italic">
@@ -139,17 +139,6 @@ export default function Hero() {
                   Explore Mentorship
                 </TelegramCta>
               </motion.div>
-              <motion.p variants={fadeUp} className="mt-2 text-[12px] font-medium text-brand-text-muted">
-                Telegram{' '}
-                <a
-                  href={SITE.telegramUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-brand-orange hover:text-brand-orange-bright"
-                >
-                  {SITE.telegramHandle}
-                </a>
-              </motion.p>
 
               <motion.div variants={fadeUp} className="mt-5">
                 <HeroStats stats={heroStats} />
@@ -276,17 +265,6 @@ export default function Hero() {
                 Explore Mentorship
               </TelegramCta>
             </motion.div>
-            <motion.p variants={fadeUp} className="mt-2 text-center text-[12px] font-medium text-brand-text-muted sm:text-left">
-              Telegram{' '}
-              <a
-                href={SITE.telegramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-brand-orange hover:text-brand-orange-bright"
-              >
-                {SITE.telegramHandle}
-              </a>
-            </motion.p>
 
             <motion.div variants={fadeUp} className="mt-7">
               <HeroStats stats={heroStats} />

@@ -6,7 +6,7 @@ import TelegramCta from '../components/common/TelegramCta';
 import CandlestickBackground from '../components/ui/CandlestickBackground';
 import Glow from '../components/ui/Glow';
 import { clubFeatures } from '../data/clubFeatures';
-import { fadeUp, SITE } from '../lib/constants';
+import { fadeUp } from '../lib/constants';
 
 export default function Club() {
   return (
@@ -28,19 +28,10 @@ export default function Club() {
               A premium trading community with real-time signals, live education, and upcoming
               algo strategies   built for traders who take the game seriously.
             </p>
-            <div className="mt-8 flex flex-col items-start gap-1.5">
+            <div className="mt-8">
               <TelegramCta iconPosition="right">
                 Join Now
               </TelegramCta>
-              <a
-                href={SITE.telegramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[12px] font-medium text-white/70 transition-colors hover:text-brand-orange"
-                aria-label={`Open Telegram ${SITE.telegramHandle}`}
-              >
-                Telegram {SITE.telegramHandle}
-              </a>
             </div>
           </motion.div>
         </Container>

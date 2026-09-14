@@ -6,7 +6,7 @@ export const bookMeta = {
   author: 'By Sachin Kumar',
   description:
     "Memes to Millions is your ultimate guide to the rise, risks, and rewards of meme tokens—one of crypto's most explosive trends. From Dogecoin to Pepe, this book explores how internet culture, speculation, and DeFi create viral assets. Learn to spot promising tokens, avoid scams, and leverage AI trading strategies in the evolving meme economy. Whether you're an investor, trader, or simply curious, this is your essential roadmap to navigating the wild world of meme tokens.",
-  buyHref: '#',
+  buyHref: 'https://amzn.in/d/01gjuAHt',
   contactHref: '/contact',
 };
 
