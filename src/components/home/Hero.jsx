@@ -72,7 +72,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 12 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.55, delay: 0.3 }}
-          className="absolute top-[20%] left-[56%] z-20 max-w-[200px] text-left"
+          className="absolute top-[18%] left-[54.5%] z-20 max-w-[200px] text-left"
         >
           <p className="font-serif text-[16px] leading-[1.35] text-brand-text-secondary italic xl:text-[18px]">
             <span className="mr-0.5 align-top text-[22px] leading-none font-normal text-brand-orange not-italic">
