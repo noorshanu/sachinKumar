@@ -15,13 +15,16 @@ export const COLORS = {
 
 export const SITE = {
   name: 'Sachin Kumar',
+  clubName: '100xBull',
+  clubLabel: '100xBull Club',
   tagline: 'Trade | Learn | Grow',
   title: 'Sachin Kumar | Crypto Trader, Author & Educator',
   description:
     'Learn smarter trading strategies, crypto market insights, mentorship and the story behind Memes to Millions.',
   email: 'hello@sachinkumar.com',
-  /** Replace with final Telegram URL when ready */
-  telegramTradeUrl: 'https://t.me/',
+  telegramHandle: '@advertiser247',
+  telegramUrl: 'https://t.me/advertiser247',
+  telegramTradeUrl: 'https://t.me/advertiser247',
 };
 
 export const fadeUp = {

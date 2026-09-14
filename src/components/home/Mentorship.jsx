@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
 import Container from '../layout/Container';
-import Button from '../common/Button';
+import TelegramCta from '../common/TelegramCta';
 import MentorshipCard from './MentorshipCard';
 import { mentorshipPrograms } from '../../data/mentorship';
-import { fadeUp, staggerContainer } from '../../lib/constants';
+import { fadeUp, staggerContainer, SITE } from '../../lib/constants';
 
 export default function Mentorship() {
   return (
@@ -61,9 +60,18 @@ export default function Mentorship() {
               <br className="hidden lg:block" />
               mentorship and practical strategies.
             </p>
-            <Button href="/mentorship" icon={FiArrowRight} size="md">
+            <TelegramCta size="md" iconPosition="right">
               Explore Mentorship
-            </Button>
+            </TelegramCta>
+            <a
+              href={SITE.telegramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[12px] font-medium text-brand-text-muted transition-colors hover:text-brand-orange"
+              aria-label={`Open Telegram ${SITE.telegramHandle}`}
+            >
+              Telegram {SITE.telegramHandle}
+            </a>
           </motion.div>
         </motion.div>
 

@@ -1,6 +1,6 @@
 export default function HeroStats({ stats }) {
   return (
-    <div className="grid grid-cols-2 gap-4 border-t border-brand-text/10 pt-5 sm:grid-cols-4 sm:gap-0 sm:pt-5">
+    <div className="grid grid-cols-3 gap-4 border-t border-brand-text/10 pt-5 sm:gap-0 sm:pt-5">
       {stats.map((stat, i) => (
         <div
           key={stat.label}

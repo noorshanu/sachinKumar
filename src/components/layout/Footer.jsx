@@ -9,7 +9,6 @@ import Container from './Container';
 import NavLink from '../common/NavLink';
 import {
   footerQuickLinks,
-  footerResourceLinks,
   socialLinks,
   footerLegal,
 } from '../../data/navigation';
@@ -55,8 +54,8 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white">
       <Container className="py-14 md:py-16 lg:py-[72px]">
-        {/* Desktop: 5 equal columns like screenshot · Mobile: stacked */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-x-5 xl:gap-x-8">
+        {/* Brand · Quick Links · Legal · Regulatory */}
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-5 xl:gap-x-8">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <NavLink href="/" className="inline-block">
@@ -92,9 +91,6 @@ export default function Footer() {
 
           {/* Quick Links */}
           <FooterLinkList title="Quick Links" links={footerQuickLinks} />
-
-          {/* Resources */}
-          <FooterLinkList title="Resources" links={footerResourceLinks} />
 
           {/* Legal disclaimer */}
           <div>

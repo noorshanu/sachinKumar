@@ -1,7 +1,7 @@
 import Container from '../layout/Container';
 import ClubCard from './ClubCard';
-import Button from '../common/Button';
-import { FiArrowRight } from 'react-icons/fi';
+import TelegramCta from '../common/TelegramCta';
+import { SITE } from '../../lib/constants';
 import { clubFeatures } from '../../data/clubFeatures';
 import clubBg from '../../assets/clubbg.png';
 
@@ -26,7 +26,7 @@ export default function ClubSection() {
             <div className="mb-3 flex items-center gap-3">
               <span className="h-5 w-1 rounded-full bg-brand-orange" aria-hidden="true" />
               <p className="text-[11px] font-bold tracking-[0.2em] uppercase">
-                <span className="text-brand-orange">BULL100X</span>{' '}
+                <span className="text-brand-orange">{SITE.clubName}</span>{' '}
                 <span className="text-white">CLUB</span>
               </p>
             </div>
@@ -45,9 +45,20 @@ export default function ClubSection() {
               <br className="hidden lg:block" />
               learn from live sessions and access powerful trading tools.
             </p>
-            <Button href="/#club" variant="primary" size="md" icon={FiArrowRight} className="shrink-0">
-              Join Now
-            </Button>
+            <div className="flex shrink-0 flex-col items-start gap-1.5">
+              <TelegramCta size="md" iconPosition="right" className="shrink-0">
+                Join Now
+              </TelegramCta>
+              <a
+                href={SITE.telegramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[12px] font-medium text-white/70 transition-colors hover:text-brand-orange"
+                aria-label={`Open Telegram ${SITE.telegramHandle}`}
+              >
+                Telegram {SITE.telegramHandle}
+              </a>
+            </div>
           </div>
         </div>
 

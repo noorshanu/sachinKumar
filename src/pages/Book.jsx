@@ -2,8 +2,9 @@ import { motion } from 'framer-motion';
 import { FiArrowRight, FiCheck } from 'react-icons/fi';
 import Container from '../components/layout/Container';
 import Button from '../components/common/Button';
+import TelegramCta from '../components/common/TelegramCta';
 import { bookImage } from '../lib/images';
-import { fadeUp, staggerContainer, floatAnimation } from '../lib/constants';
+import { fadeUp, staggerContainer, floatAnimation, SITE } from '../lib/constants';
 import { bookDiscoveries, bookHighlights, bookMeta } from '../data/book';
 
 export default function Book() {
@@ -186,9 +187,9 @@ export default function Book() {
               <Button href={bookMeta.buyHref} icon={FiArrowRight}>
                 Get Your Copy
               </Button>
-              <Button href="/#club" variant="outlineDark">
-                Join Bull100x Club
-              </Button>
+              <TelegramCta variant="outlineDark" iconPosition="right">
+                Join {SITE.clubLabel}
+              </TelegramCta>
             </div>
           </div>
         </Container>

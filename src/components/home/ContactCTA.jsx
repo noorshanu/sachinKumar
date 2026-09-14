@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { FiArrowRight, FiMail } from 'react-icons/fi';
 import Container from '../layout/Container';
 import Button from '../common/Button';
-import { fadeUp } from '../../lib/constants';
+import { fadeUp, SITE } from '../../lib/constants';
 
 export default function ContactCTA() {
   return (
@@ -32,7 +32,7 @@ export default function ContactCTA() {
           </h2>
 
           <p className="mt-4 text-base leading-relaxed text-white/60 md:text-lg">
-            Whether you&apos;re interested in mentorship, the Bull100x Club, or collaboration  
+            Whether you&apos;re interested in mentorship, the {SITE.clubLabel}, or collaboration  
             let&apos;s start a conversation.
           </p>
 

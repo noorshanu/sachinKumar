@@ -31,7 +31,7 @@ export default function Contact() {
               Let&apos;s <span className="text-brand-orange">Connect</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-text-secondary">
-              Have a question about mentorship, the Bull100x Club, or partnerships? Send a message
+              Have a question about mentorship, the {SITE.clubLabel}, or partnerships? Send a message
               and we&apos;ll get back to you.
             </p>
           </motion.div>
@@ -162,7 +162,7 @@ export default function Contact() {
                   </p>
                 </div>
                 <div className="rounded-[16px] border border-brand-text/5 p-6">
-                  <h3 className="font-bold text-brand-text">Bull100x Club</h3>
+                  <h3 className="font-bold text-brand-text">{SITE.clubLabel}</h3>
                   <p className="mt-2 text-sm text-brand-text-secondary">
                     Ready to join the trading community? Ask about membership and current openings.
                   </p>

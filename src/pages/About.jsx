@@ -1,23 +1,21 @@
-import { motion } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
-import Container from '../components/layout/Container';
-import Button from '../components/common/Button';
-import BookCTA from '../components/home/BookCTA';
-import { personImage } from '../lib/images';
-import { fadeUp, staggerContainer } from '../lib/constants';
+import { motion } from 'framer-motion'
+import Container from '../components/layout/Container'
+import Button from '../components/common/Button'
+import TelegramCta from '../components/common/TelegramCta'
+import BookCTA from '../components/home/BookCTA'
+import { personImage } from '../lib/images'
+import { fadeUp, staggerContainer, SITE } from '../lib/constants'
 import {
   aboutFocus,
   aboutPageCopy,
   aboutRoles,
   aboutStats,
-} from '../data/about';
+} from '../data/about'
 
 export default function About() {
   return (
     <div>
-      {/* Hero band */}
       <section className="relative overflow-hidden bg-[#F3F0EB] pt-20 md:pt-[72px]">
-        {/* Cool layered background */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
           <div
             className="absolute inset-0 opacity-[0.45]"
@@ -48,7 +46,7 @@ export default function About() {
           <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-brand-orange/25 to-transparent" />
         </div>
 
-        <Container className="relative  pt-6  md:pt-8 llg:pt-8">
+        <Container className="relative pt-6 md:pt-8 lg:pt-8">
           <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
             <motion.div
               variants={staggerContainer}
@@ -69,8 +67,6 @@ export default function About() {
                 {aboutPageCopy.headline}
                 <br />
                 <span className="text-brand-orange">{aboutPageCopy.headlineAccent}</span>
-                <br />
-                {aboutPageCopy.headlineEnd}
               </motion.h1>
 
               <motion.p
@@ -101,7 +97,7 @@ export default function About() {
               {personImage && (
                 <img
                   src={personImage}
-                  alt="Sachin Kumar   blockchain consultant and author"
+                  alt="Sachin Kumar — blockchain consultant and crypto trader"
                   className="relative z-10 w-full max-w-[360px] object-contain object-top xl:max-w-[400px]"
                 />
               )}
@@ -110,7 +106,6 @@ export default function About() {
         </Container>
       </section>
 
-      {/* Stats strip */}
       <section className="border-y border-brand-text/8 bg-white">
         <Container>
           <div className="grid grid-cols-2 divide-brand-text/8 md:grid-cols-4 md:divide-x">
@@ -133,7 +128,6 @@ export default function About() {
         </Container>
       </section>
 
-      {/* Story */}
       <section className="bg-white py-14 md:py-20 lg:py-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -145,15 +139,15 @@ export default function About() {
               className="lg:col-span-4"
             >
               <p className="text-[11px] font-bold tracking-[0.2em] text-brand-orange uppercase">
-                The Work
+                {aboutPageCopy.journeyTitle}
               </p>
               <h2 className="mt-3 text-[32px] font-extrabold leading-[1.1] tracking-[-0.03em] text-brand-text md:text-[40px]">
-                Markets. Technology.
+                From consulting
                 <br />
-                <span className="text-brand-orange">Community.</span>
+                <span className="text-brand-orange">to the markets.</span>
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-brand-text-secondary">
-                Where real adoption is built   not just announced.
+                Technology, liquidity, community, and execution — not just price charts.
               </p>
 
               <ul className="mt-8 space-y-3 border-t border-brand-text/8 pt-6">
@@ -176,7 +170,7 @@ export default function About() {
               viewport={{ once: true }}
               className="space-y-6 lg:col-span-8"
             >
-              {aboutPageCopy.paragraphs.map((paragraph) => (
+              {aboutPageCopy.journey.map((paragraph) => (
                 <motion.p
                   key={paragraph.slice(0, 32)}
                   variants={fadeUp}
@@ -185,24 +179,94 @@ export default function About() {
                   {paragraph}
                 </motion.p>
               ))}
-
-              <motion.blockquote
-                variants={fadeUp}
-                className="relative mt-4 border-l-2 border-brand-orange bg-brand-cream/80 px-6 py-5"
-              >
-                <p className="font-serif text-[17px] leading-relaxed text-brand-text italic md:text-lg">
-                  {aboutPageCopy.bookNote}
-                </p>
-              </motion.blockquote>
             </motion.div>
           </div>
         </Container>
       </section>
 
-      {/* Book CTA band */}
+      <section className="bg-brand-cream py-14 md:py-20 lg:py-24">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="lg:col-span-4"
+            >
+              <p className="text-[11px] font-bold tracking-[0.2em] text-brand-orange uppercase">
+                {aboutPageCopy.beyondTitle}
+              </p>
+              <h2 className="mt-3 text-[32px] font-extrabold leading-[1.1] tracking-[-0.03em] text-brand-text md:text-[40px]">
+                Education.
+                <br />
+                <span className="text-brand-orange">Discipline. Process.</span>
+              </h2>
+            </motion.div>
+
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="space-y-6 lg:col-span-8"
+            >
+              {aboutPageCopy.beyond.map((paragraph) => (
+                <motion.p
+                  key={paragraph.slice(0, 32)}
+                  variants={fadeUp}
+                  className="text-[16px] leading-[1.75] text-brand-text-secondary md:text-[17px]"
+                >
+                  {paragraph}
+                </motion.p>
+              ))}
+            </motion.div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-14 md:py-20">
+        <Container>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <p className="text-[11px] font-bold tracking-[0.2em] text-brand-orange uppercase">
+              {aboutPageCopy.philosophyEyebrow}
+            </p>
+            <blockquote className="mt-5">
+              <p className="font-serif text-[28px] leading-snug text-brand-text italic md:text-[36px]">
+                &ldquo;{aboutPageCopy.philosophyQuote}&rdquo;
+              </p>
+              <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-relaxed text-brand-text-secondary md:text-base">
+                {aboutPageCopy.philosophyNote}
+              </p>
+              <cite className="mt-4 block text-[11px] font-bold tracking-[0.18em] text-brand-text-muted not-italic uppercase">
+                — {SITE.name}
+              </cite>
+            </blockquote>
+          </motion.div>
+        </Container>
+      </section>
+
+      <section className="border-t border-brand-text/8 bg-[#F3F0EB] py-10 md:py-12">
+        <Container>
+          <div className="mx-auto max-w-3xl">
+            <p className="text-[11px] font-bold tracking-[0.16em] text-brand-orange uppercase">
+              {aboutPageCopy.riskTitle}
+            </p>
+            <p className="mt-3 text-[13px] leading-relaxed text-brand-text-secondary md:text-[14px]">
+              {aboutPageCopy.riskText}
+            </p>
+          </div>
+        </Container>
+      </section>
+
       <BookCTA id="about-book" />
 
-      {/* Bottom CTA */}
       <section className="bg-brand-cream py-14 md:py-16">
         <Container>
           <div className="flex flex-col items-start justify-between gap-6 rounded-[20px] border border-brand-text/8 bg-white p-8 md:flex-row md:items-center md:p-10">
@@ -211,14 +275,14 @@ export default function About() {
                 Ready to go deeper?
               </h2>
               <p className="mt-2 max-w-lg text-sm text-brand-text-secondary md:text-base">
-                Mentorship, Bull100x Club, or a conversation about strategy   pick the path that
+                Mentorship, {SITE.clubLabel}, or a conversation about strategy — pick the path that
                 fits.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Button href="/#mentorship" icon={FiArrowRight}>
+              <TelegramCta iconPosition="right">
                 Explore Mentorship
-              </Button>
+              </TelegramCta>
               <Button href="/contact" variant="secondary">
                 Contact
               </Button>
@@ -227,5 +291,5 @@ export default function About() {
         </Container>
       </section>
     </div>
-  );
+  )
 }

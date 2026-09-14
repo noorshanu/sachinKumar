@@ -1,3 +1,5 @@
+import { SITE } from '../lib/constants';
+
 export const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
@@ -10,7 +12,7 @@ export const navLinks = [
 
 export const footerQuickLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Bull100x Club', href: '/#club' },
+  { label: SITE.clubLabel, href: '/#club' },
   { label: 'Mentorship', href: '/#mentorship' },
   { label: 'Partner Exchanges', href: '/#partners' },
   { label: 'About', href: '/about' },
@@ -18,22 +20,13 @@ export const footerQuickLinks = [
   { label: 'Contact', href: '/contact' },
 ];
 
-export const footerResourceLinks = [
-  { label: 'Market Updates', href: '/#club' },
-  { label: 'Trading Tools', href: '/mentorship' },
-  { label: 'Blog', href: '/book' },
-  { label: 'FAQ', href: '/contact' },
-  { label: 'Privacy Policy', href: '/privacy' },
-  { label: 'Terms of Service', href: '/terms' },
-];
-
-/** Replace hrefs with real profile URLs when ready */
+/** Profile URLs */
 export const socialLinks = [
-  { label: 'X (Twitter)', href: 'https://x.com/', id: 'x' },
-  { label: 'YouTube', href: 'https://youtube.com/', id: 'youtube' },
-  { label: 'Instagram', href: 'https://instagram.com/', id: 'instagram' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/', id: 'linkedin' },
-  { label: 'Telegram', href: 'https://t.me/', id: 'telegram' },
+  { label: 'X (Twitter)', href: 'https://x.com/ad_vertiser', id: 'x' },
+  { label: 'YouTube', href: 'https://youtube.com/@sachinkumarfinance?si=PFB162cnbDRlhHKC', id: 'youtube' },
+  { label: 'Instagram', href: 'https://www.instagram.com/oxsachin04/', id: 'instagram' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sachin-kumar-3a3207161/', id: 'linkedin' },
+  { label: 'Telegram', href: 'https://t.me/advertiser247', id: 'telegram' },
 ];
 
 export const footerLegal = {

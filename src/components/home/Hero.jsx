@@ -1,19 +1,17 @@
 import { motion } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
 import Container from '../layout/Container';
-import Button from '../common/Button';
+import TelegramCta from '../common/TelegramCta';
 import HeroStats from './HeroStats';
 import { personImage, bookImage, signatureImage, heroBackgroundImage, mobileHeroImage } from '../../lib/images';
-import { fadeUp, staggerContainer, floatAnimation } from '../../lib/constants';
+import { fadeUp, staggerContainer, floatAnimation, SITE } from '../../lib/constants';
 
 const heroStats = [
-  { value: '5+', label: 'Years Trading' },
+  { value: '3+', label: 'Years Trading' },
   { value: '50+', label: 'Projects Analyzed' },
-  { value: '100K+', label: 'Community' },
   { value: '1', label: 'Mission\nFinancial Freedom' },
 ];
 
-const verticalWords = ['Memes', 'Markets', 'Mindset', 'Millions'];
+const verticalWords = ['Market', 'Mindset', 'Profit'];
 
 function SignatureBlock({ className = '', centered = false }) {
   if (signatureImage) {
@@ -116,7 +114,7 @@ export default function Hero() {
                 variants={fadeUp}
                 className="mt-2 text-[15px] font-semibold text-brand-text xl:text-base"
               >
-                Markets. Mindset. Memes to Millions.
+                Market. Mindset. Profit.
               </motion.p>
 
               <motion.p
@@ -129,18 +127,29 @@ export default function Hero() {
               </motion.p>
 
               <motion.div variants={fadeUp} className="mt-3.5 flex flex-wrap items-center gap-2.5">
-                <Button href="/#club" size="sm" icon={FiArrowRight} className="px-5 py-2.5 text-[13px]">
-                  Join Bull100x Club
-                </Button>
-                <Button
-                  href="/#mentorship"
+                <TelegramCta size="sm" iconPosition="right" className="px-5 py-2.5 text-[13px]">
+                  Join {SITE.clubLabel}
+                </TelegramCta>
+                <TelegramCta
                   variant="secondary"
                   size="sm"
+                  iconPosition="right"
                   className="px-5 py-2.5 text-[13px]"
                 >
                   Explore Mentorship
-                </Button>
+                </TelegramCta>
               </motion.div>
+              <motion.p variants={fadeUp} className="mt-2 text-[12px] font-medium text-brand-text-muted">
+                Telegram{' '}
+                <a
+                  href={SITE.telegramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-brand-orange hover:text-brand-orange-bright"
+                >
+                  {SITE.telegramHandle}
+                </a>
+              </motion.p>
 
               <motion.div variants={fadeUp} className="mt-5">
                 <HeroStats stats={heroStats} />
@@ -242,7 +251,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p variants={fadeUp} className="mt-2.5 text-[15px] font-semibold text-brand-text">
-              Markets. Mindset. Memes to Millions.
+              Market. Mindset. Profit.
             </motion.p>
 
             <motion.p
@@ -255,18 +264,29 @@ export default function Hero() {
             </motion.p>
 
             <motion.div variants={fadeUp} className="mt-5 flex flex-col gap-2.5 sm:flex-row">
-              <Button href="/#club" size="md" icon={FiArrowRight} className="w-full text-[13px] sm:w-auto">
-                Join Bull100x Club
-              </Button>
-              <Button
-                href="/#mentorship"
+              <TelegramCta size="md" iconPosition="right" className="w-full text-[13px] sm:w-auto">
+                Join {SITE.clubLabel}
+              </TelegramCta>
+              <TelegramCta
                 variant="secondary"
                 size="md"
+                iconPosition="right"
                 className="w-full text-[13px] sm:w-auto"
               >
                 Explore Mentorship
-              </Button>
+              </TelegramCta>
             </motion.div>
+            <motion.p variants={fadeUp} className="mt-2 text-center text-[12px] font-medium text-brand-text-muted sm:text-left">
+              Telegram{' '}
+              <a
+                href={SITE.telegramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-brand-orange hover:text-brand-orange-bright"
+              >
+                {SITE.telegramHandle}
+              </a>
+            </motion.p>
 
             <motion.div variants={fadeUp} className="mt-7">
               <HeroStats stats={heroStats} />

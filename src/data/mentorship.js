@@ -8,7 +8,7 @@ export const mentorshipPrograms = [
     description: 'Learn from anywhere, at your pace.',
     features: [
       '13-15 live sessions',
-      '6 months of live trading',
+      '3 months of live trading',
       'Weekend doubt sessions',
     ],
   },
@@ -18,7 +18,7 @@ export const mentorshipPrograms = [
     title: 'Offline Mentorship',
     description: 'In-person learning experience.',
     features: [
-      '4 days of classroom learning',
+      '4 days of Offline Workshops',
       'Taught directly by Sachin Kumar',
       'Interactive workshops & networking',
     ],
@@ -31,7 +31,7 @@ export const mentorshipPrograms = [
     features: [
       '1-to-1 strategy and portfolio guidance',
       'Best topics from all programs',
-      '6 months of ongoing support',
+      '3 months of ongoing support',
     ],
   },
 ];

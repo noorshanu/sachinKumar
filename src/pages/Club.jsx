@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { FiCheck, FiArrowRight } from 'react-icons/fi';
+import { FiCheck } from 'react-icons/fi';
 import Container from '../components/layout/Container';
 import ClubCard from '../components/home/ClubCard';
-import Button from '../components/common/Button';
+import TelegramCta from '../components/common/TelegramCta';
 import CandlestickBackground from '../components/ui/CandlestickBackground';
 import Glow from '../components/ui/Glow';
 import { clubFeatures } from '../data/clubFeatures';
-import { fadeUp } from '../lib/constants';
+import { fadeUp, SITE } from '../lib/constants';
 
 export default function Club() {
   return (
@@ -18,7 +18,7 @@ export default function Club() {
         <Container className="relative">
           <motion.div variants={fadeUp} initial="hidden" animate="visible">
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-orange">
-              Bull100x Club
+              {SITE.clubLabel}
             </p>
             <h1 className="mt-4 max-w-3xl text-[42px] font-extrabold leading-[1.05] tracking-[-0.03em] text-white md:text-[56px]">
               Everything You Need to{' '}
@@ -28,10 +28,19 @@ export default function Club() {
               A premium trading community with real-time signals, live education, and upcoming
               algo strategies   built for traders who take the game seriously.
             </p>
-            <div className="mt-8">
-              <Button href="/contact" icon={FiArrowRight}>
+            <div className="mt-8 flex flex-col items-start gap-1.5">
+              <TelegramCta iconPosition="right">
                 Join Now
-              </Button>
+              </TelegramCta>
+              <a
+                href={SITE.telegramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[12px] font-medium text-white/70 transition-colors hover:text-brand-orange"
+                aria-label={`Open Telegram ${SITE.telegramHandle}`}
+              >
+                Telegram {SITE.telegramHandle}
+              </a>
             </div>
           </motion.div>
         </Container>
@@ -51,7 +60,7 @@ export default function Club() {
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-extrabold text-brand-text">
-              Why Join <span className="text-brand-orange">Bull100x</span>?
+              Why Join <span className="text-brand-orange">{SITE.clubName}</span>?
             </h2>
             <ul className="mt-8 space-y-4 text-left">
               {[

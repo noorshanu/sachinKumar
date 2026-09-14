@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { FiCheck } from 'react-icons/fi';
+import TelegramCta from '../common/TelegramCta';
+import { SITE } from '../../lib/constants';
 
 export default function MentorshipCard({ program, index }) {
   const Icon = program.icon;
@@ -47,6 +49,21 @@ export default function MentorshipCard({ program, index }) {
           </motion.li>
         ))}
       </ul>
+
+      <div className="mt-auto flex flex-col items-start gap-1.5 pt-4">
+        <TelegramCta size="sm" className="w-full text-[13px]" iconPosition="right">
+          Explore Mentorship
+        </TelegramCta>
+        <a
+          href={SITE.telegramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[12px] font-medium text-brand-text-muted transition-colors hover:text-brand-orange"
+          aria-label={`Open Telegram ${SITE.telegramHandle}`}
+        >
+          Telegram {SITE.telegramHandle}
+        </a>
+      </div>
     </motion.article>
   );
 }

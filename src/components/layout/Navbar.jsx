@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX, FiArrowRight } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 import Container from './Container';
-import Button from '../common/Button';
+import TelegramCta from '../common/TelegramCta';
 import { navLinks } from '../../data/navigation';
 import NavLink from '../common/NavLink';
 import { useIsActive } from '../../hooks/useIsActive';
@@ -164,9 +164,9 @@ function MobileSidebar({ open, onClose }) {
               transition={{ delay: 0.28, duration: 0.35 }}
               className="border-t border-brand-text/6 p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]"
             >
-              <Button href="/#club" className="w-full" icon={FiArrowRight} onClick={onClose}>
+              <TelegramCta className="w-full" iconPosition="right" onClick={onClose}>
                 Join Now
-              </Button>
+              </TelegramCta>
               <p className="mt-3 text-center text-[11px] tracking-[0.12em] text-brand-text-muted uppercase">
                 Trade · Learn · Grow
               </p>
@@ -235,9 +235,9 @@ export default function Navbar() {
             </ul>
 
             <div className="hidden xl:block">
-              <Button href="/#club" icon={FiArrowRight}>
+              <TelegramCta iconPosition="right">
                 Join Now
-              </Button>
+              </TelegramCta>
             </div>
 
             <motion.button
